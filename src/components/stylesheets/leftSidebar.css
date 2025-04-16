@@ -1,0 +1,375 @@
+/* Styles for header elements (likely used in ProfileHeader and potentially other headers) */
+.header {
+  display: flex; /* Use flexbox layout to arrange items in a row */
+  align-items: center; /* Vertically center items within the header */
+  padding: 1rem; /* Add padding around the content inside the header */
+}
+
+/* General styles for avatar images */
+.avatar {
+  width: 49px; /* Set a fixed width for the avatar */
+  height: 49px; /* Set a fixed height for the avatar */
+  border-radius: 50%; /* Make the avatar image circular */
+  margin: 0 8px; /* Add horizontal margin (0 top/bottom, 8px left/right) for spacing */
+}
+
+/* Styles for paragraph text within elements having the class 'header' */
+.header p {
+  font-size: 18px; /* Set the font size for the header text */
+  color: #fff; /* Set the text color to white */
+  font-family: cursive; /* Apply a cursive font (may be overridden by the next rule) */
+  font-family: "Open Sans", sans-serif; /* Set the primary font to Open Sans, fallback to generic sans-serif */
+}
+
+/* Styles for individual contact tabs in the contact list */
+.contact-tab {
+  display: flex; /* Use flexbox to arrange avatar and text side-by-side */
+  align-items: center; /* Vertically center the items in the tab */
+  border-bottom: 2px solid black; /* Add a solid black line below each contact tab */
+  padding: 3px; /* Add small padding around the content */
+}
+
+/* Styles for the text container within a contact tab (usually holding name and last message) */
+.contactText {
+  display: flex; /* Use flexbox for layout (e.g., if timestamp is included) */
+  justify-content: space-between; /* Space out elements within this container (e.g., message and time) */
+  font-size: 13px; /* Set the font size for the last message preview */
+  color: #2f2f2f; /* Set a dark gray color for the text */
+  width: auto; /* Allow the width to adjust based on content */
+}
+
+/* Styles for paragraph elements within the contactText container (specifically the last message) */
+.contactText p {
+  /* Ensure long words or text wraps within the container */
+  overflow-wrap: break-word; /* Standard property for breaking long words */
+  word-wrap: break-word; /* Older property for compatibility */
+  hyphens: auto; /* Allow automatic hyphenation if needed (browser dependent) */
+}
+
+/* Styles specifically for the header in the left sidebar */
+.left-sidebar-header {
+  /* Apply a box shadow to give a slight elevation effect */
+  box-shadow: 0 4px 8px 0 rgb(59 59 59 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+/* Styles for the "New Conversation" button/area */
+.new-convo {
+  display: flex; /* Arrange text and icon horizontally */
+  color: #fff; /* Set text color to white */
+  justify-content: space-between; /* Place text and icon at opposite ends */
+}
+
+/* Styles for the text within the "New Conversation" area */
+.new-convo p {
+  font-size: 16px; /* Set the font size */
+}
+
+/* Styles for Font Awesome icons (like the plus icon) within the "New Conversation" area */
+.new-convo .fas {
+  /* Target elements with the 'fas' class inside '.new-convo' */
+  cursor: pointer; /* Change cursor to pointer on hover to indicate clickability */
+  padding: 8px; /* Add padding around the icon for better click area */
+}
+
+/* Styles for the "New Conversation Tab" overlay/modal */
+.new-convo-tab {
+  border: 1px solid rgb(137, 47, 255); /* Add a purple border */
+  height: 400px; /* Set a fixed height */
+  width: 400px; /* Set a fixed width */
+  background-color: white; /* Set a white background */
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 100px; /* Position 100px from the top */
+  right: 350px; /* Position 350px from the right */
+  z-index: 99; /* Ensure it appears above most other elements */
+}
+
+/* Styles for the header within the "New Conversation Tab" */
+.nct-header {
+  background-color: #648381; /* Set a specific background color */
+  color: #fff; /* Set text color to white */
+  height: 55px; /* Set a fixed height */
+  display: flex; /* Arrange title and close icon horizontally */
+  padding: 10px; /* Add padding inside the header */
+  justify-content: space-between; /* Place title and close icon at opposite ends */
+}
+
+/* Styles for the title text within the "New Conversation Tab" header */
+.nct-header p {
+  font-size: 18px; /* Set the font size */
+}
+
+/* Styles for Font Awesome icons (like the close icon) within the "New Conversation Tab" header */
+.nct-header .fas {
+  /* Target elements with the 'fas' class inside '.nct-header' */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styles for the scrollable list area within the "New Conversation Tab" */
+.nct-list {
+  height: 343px; /* Set height (total height - header height - border width) */
+  overflow: auto; /* Add a scrollbar if the content exceeds the height */
+}
+
+/* --- Media Queries for Responsive Adjustments --- */
+
+/* Styles for screens up to 1200px wide */
+@media screen and (max-width: 1200px) {
+  /* Reduce the width of the "New Conversation Tab" */
+  .new-convo-tab {
+    width: 300px;
+  }
+}
+
+/* Styles for screens up to 792px wide (tablets, small laptops) */
+@media screen and (max-width: 792px) {
+  /* Adjust the horizontal positioning of the "New Conversation Tab" */
+  .new-convo-tab {
+    top: 100px; /* Keep top position */
+    right: 30%; /* Position relative to the screen width */
+  }
+}
+
+/* Styles for screens up to 520px wide (large phones, small tablets) */
+@media screen and (max-width: 520px) {
+  /* Further adjust the horizontal positioning on smaller screens */
+  .new-convo-tab {
+    top: 100px; /* Keep top position */
+    right: 20%; /* Position closer to the right edge */
+  }
+}
+.left-sidebar {
+  /* Use CSS variable for background color */
+  background-color: var(--bg-color-sidebar-left);
+}
+
+.header p {
+  /* Use CSS variable for text color */
+  color: var(--text-color-header);
+  font-family: "Open Sans", sans-serif; /* Remove duplicate font-family */
+}
+
+.contact-tab {
+  display: flex;
+  align-items: center;
+  /* Use CSS variable for border color */
+  border-bottom: 2px solid var(--border-color);
+  padding: 3px;
+}
+
+.contactText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  /* Use CSS variable for text color */
+  color: var(--text-color-secondary);
+  width: auto;
+}
+
+.contactText p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.left-sidebar-header {
+  /* Use CSS variables for shadow */
+  box-shadow: 0 4px 8px 0 var(--shadow-color-1),
+    0 6px 20px 0 var(--shadow-color-2);
+}
+
+.new-convo {
+  display: flex;
+  /* Use CSS variable for text color */
+  color: var(--text-color-header);
+  justify-content: space-between;
+}
+
+/* ... rest of new-convo styles ... */
+
+.new-convo-tab {
+  /* Use CSS variables */
+  border: 1px solid var(--border-color-new-convo-tab);
+  background-color: var(--bg-color-new-convo-tab);
+  color: var(--text-color-primary); /* Add text color for content inside */
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  right: 350px;
+  z-index: 99;
+}
+
+.nct-header {
+  /* Use CSS variables */
+  background-color: var(--bg-color-new-convo-header);
+  color: var(--text-color-header);
+  height: 55px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+/* ... rest of the file and media queries ... */
+
+/* Ensure contact list items are readable */
+body.dark-theme .ContactName p {
+  /* Assuming ContactName applies its inline style directly */
+  color: var(
+    --text-color-primary
+  ) !important; /* Override inline style if necessary, or better: add a class */
+}
+body.dark-theme .contactText p {
+  color: var(--text-color-secondary);
+}
+.right-sidebar {
+  padding: 0;
+  /* Use CSS variable, keep image */
+  background-color: var(--bg-color-sidebar-right);
+  background-image: url(../../images/background.jpg);
+  /* Optional: Blend mode for dark theme */
+  /* body.dark-theme & { background-blend-mode: multiply; } */
+}
+
+.no-chat-background {
+  /* Use CSS variable */
+  background-color: var(--bg-color-no-convo);
+}
+.no-chat-background h2 {
+  color: var(--text-color-primary);
+}
+
+.message-box-header {
+  /* Use CSS variables */
+  background: var(--bg-color-header);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+  /* Use CSS variables */
+  box-shadow: 0 4px 8px 0 var(--shadow-color-header-1),
+    0 6px 20px 0 var(--shadow-color-header-2);
+}
+
+/* ... messages-section, message-bubble, mbr styles remain the same ... */
+
+.no-message-alert {
+  position: absolute;
+  bottom: 50px;
+  left: 60%;
+  font-size: 18px;
+  /* Use CSS variables */
+  color: var(--text-color-no-convo-alert);
+  background-color: var(--bg-no-convo-alert);
+  padding: 1.2rem;
+}
+
+/* ... media query for no-message-alert ... */
+
+.left-bubble {
+  width: 220px;
+  height: auto;
+  display: block;
+  /* Use CSS variable */
+  background: var(--bg-bubble-left);
+  border-radius: 4px;
+  position: relative;
+  margin: 15px 0;
+  padding: 8px;
+  /* Use CSS variable for text */
+  color: var(--text-color-bubble);
+}
+
+/* ... media queries for left-bubble ... */
+
+.message {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  /* Text color is inherited from bubble or set by var(--text-color-bubble) */
+}
+
+.name {
+  font-weight: 600;
+  font-size: 13px;
+  margin: 0 0 4px;
+  /* Use CSS variable */
+  color: var(--text-color-bubble-name);
+}
+
+.message-timestamp {
+  font-size: 11px;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  text-transform: uppercase;
+  /* Use CSS variable */
+  color: var(--text-color-bubble);
+  opacity: 0.8; /* Make timestamp slightly less prominent */
+}
+
+/* Arrow styles */
+.bubble-arrow:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  /* Use CSS variable for color, matching the bubble background */
+  border-top: 9px solid var(--bg-bubble-left);
+  border-radius: 0 20px 0;
+  width: 15px;
+  height: 30px;
+  transform: rotate(145deg);
+}
+
+.right-bubble {
+  width: 220px;
+  height: auto;
+  display: block;
+  /* Use CSS variable */
+  background: var(--bg-bubble-right);
+  border-radius: 4px;
+  position: relative;
+  margin: 10px 0;
+  align-self: flex-end;
+  padding: 8px;
+  /* Use CSS variable */
+  color: var(--text-color-bubble);
+}
+
+/* ... media query for right-bubble ... */
+
+.bubble-arrow-alt:after {
+  /* Use CSS variable for color, matching the bubble background */
+  border-top-color: var(--bg-bubble-right);
+  transform: rotate(45deg) scaleY(-1);
+}
+
+.message-input {
+  /* Use CSS variable */
+  background: var(--bg-color-header); /* Reuse header or define specific */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.message-input input {
+  outline: none;
+  padding: 6px;
+  width: 100%;
+  /* Use CSS variables */
+  background-color: var(--bg-color-input);
+  color: var(--text-color-input);
+  border: 1px solid var(--border-color);
+}
+
+.send-button {
+  /* Use CSS variables */
+  background-color: var(--bg-color-button);
+  color: var(--text-color-button);
+  width: 30%;
+  padding: 6px;
+  border: none; /* Add for consistency */
+  cursor: pointer; /* Add cursor */
+}

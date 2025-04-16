@@ -1,0 +1,190 @@
+/* Define CSS variables for light theme (default) */
+:root {
+  --bg-color-main: #ffffff; /* White background */
+  --bg-color-sidebar-left: rgb(59, 204, 148);
+  --bg-color-sidebar-right: #db188a3a;
+  --bg-color-header: rgb(37, 23, 53);
+  --bg-color-new-convo-header: #648381;
+  --bg-color-new-convo-tab: white;
+  --bg-color-no-convo: #a04bb9;
+  --bg-color-input: white;
+  --bg-color-button: rgb(32, 218, 94);
+  --bg-bubble-left: #f0fe86;
+  --bg-bubble-right: #c93ba5e0;
+  --text-color-primary: #050505; /* Dark text */
+  --text-color-secondary: #2f2f2f;
+  --text-color-header: #fff;
+  --text-color-button: white;
+  --text-color-bubble: black;
+  --text-color-bubble-name: #3498db;
+  --text-color-input: black;
+  --text-color-no-convo-alert: #fff;
+  --bg-no-convo-alert: rgb(93, 196, 173);
+  --border-color: black;
+  --border-color-new-convo-tab: rgb(137, 47, 255);
+  --shadow-color-1: rgba(59, 59, 59, 0.2);
+  --shadow-color-2: rgba(0, 0, 0, 0.19);
+  --shadow-color-header-1: rgba(216, 213, 216, 0.2);
+  --shadow-color-header-2: rgba(111, 196, 174, 0.336);
+}
+
+/* Define CSS variables for dark theme */
+body.dark-theme {
+  --bg-color-main: #121212; /* Very dark background */
+  --bg-color-sidebar-left: #1e1e1e; /* Darker sidebar */
+  --bg-color-sidebar-right: #1a1a1a; /* Darker right sidebar */
+  --bg-color-header: #2a2a2a; /* Darker header */
+  --bg-color-new-convo-header: #3a3a3a;
+  --bg-color-new-convo-tab: #242424;
+  --bg-color-no-convo: #3a1e45; /* Darker purple */
+  --bg-color-input: #3a3a3a;
+  --bg-color-button: #007bff; /* Example blue button */
+  --bg-bubble-left: #3a3a3a; /* Darker bubbles */
+  --bg-bubble-right: #0056b3; /* Darker blue for right bubble */
+  --text-color-primary: #e1e1e1; /* Light text */
+  --text-color-secondary: #b0b0b0;
+  --text-color-header: #e1e1e1;
+  --text-color-button: white;
+  --text-color-bubble: #e1e1e1;
+  --text-color-bubble-name: #80bdff; /* Lighter blue name */
+  --text-color-input: #e1e1e1;
+  --text-color-no-convo-alert: #e1e1e1;
+  --bg-no-convo-alert: #2a5a52; /* Darker teal */
+  --border-color: #444; /* Darker border */
+  --border-color-new-convo-tab: #5a3e7a;
+  --shadow-color-1: rgba(0, 0, 0, 0.4);
+  --shadow-color-2: rgba(0, 0, 0, 0.3);
+  --shadow-color-header-1: rgba(0, 0, 0, 0.3);
+  --shadow-color-header-2: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply base variables to body */
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color-main);
+  color: var(--text-color-primary);
+  /* Add transition for smooth theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.link-tag {
+  text-decoration: none;
+  /* Ensure links are visible in dark mode */
+  color: var(
+    --text-color-bubble-name
+  ); /* Use name color or a dedicated link color */
+}
+body.dark-theme .link-tag {
+  color: var(--text-color-bubble-name); /* Ensure visibility */
+}
+:root {
+  --bg-color-main: #ffffff; /* White background */
+  --bg-color-sidebar-left: rgb(59, 204, 148);
+  --bg-color-sidebar-right: #db188a3a;
+  --bg-color-header: rgb(37, 23, 53);
+  --bg-color-new-convo-header: #648381;
+  --bg-color-new-convo-tab: white;
+  --bg-color-no-convo: #a04bb9;
+  --bg-color-input: white;
+  --bg-color-button: rgb(32, 218, 94);
+  --bg-bubble-left: #f0fe86;
+  --bg-bubble-right: #c93ba5e0;
+  --text-color-primary: #050505; /* Dark text */
+  --text-color-secondary: #2f2f2f;
+  --text-color-header: #fff;
+  --text-color-button: white;
+  --text-color-bubble: black;
+  --text-color-bubble-name: #3498db;
+  --text-color-input: black;
+  --text-color-no-convo-alert: #fff;
+  --bg-no-convo-alert: rgb(93, 196, 173);
+  --border-color: black;
+  --border-color-new-convo-tab: rgb(137, 47, 255);
+  --shadow-color-1: rgba(59, 59, 59, 0.2);
+  --shadow-color-2: rgba(0, 0, 0, 0.19);
+  --shadow-color-header-1: rgba(216, 213, 216, 0.2);
+  --shadow-color-header-2: rgba(111, 196, 174, 0.336);
+}
+
+/* Define CSS variables for dark theme */
+body.dark-theme {
+  --bg-color-main: #121212; /* Very dark background */
+  --bg-color-sidebar-left: #1e1e1e; /* Darker sidebar */
+  --bg-color-sidebar-right: #1a1a1a; /* Darker right sidebar */
+  --bg-color-header: #2a2a2a; /* Darker header */
+  --bg-color-new-convo-header: #3a3a3a;
+  --bg-color-new-convo-tab: #242424;
+  --bg-color-no-convo: #3a1e45; /* Darker purple */
+  --bg-color-input: #3a3a3a;
+  --bg-color-button: #007bff; /* Example blue button */
+  --bg-bubble-left: #3a3a3a; /* Darker bubbles */
+  --bg-bubble-right: #0056b3; /* Darker blue for right bubble */
+  --text-color-primary: #e1e1e1; /* Light text */
+  --text-color-secondary: #b0b0b0;
+  --text-color-header: #e1e1e1;
+  --text-color-button: white;
+  --text-color-bubble: #e1e1e1;
+  --text-color-bubble-name: #80bdff; /* Lighter blue name */
+  --text-color-input: #e1e1e1;
+  --text-color-no-convo-alert: #e1e1e1;
+  --bg-no-convo-alert: #2a5a52; /* Darker teal */
+  --border-color: #444; /* Darker border */
+  --border-color-new-convo-tab: #5a3e7a;
+  --shadow-color-1: rgba(0, 0, 0, 0.4);
+  --shadow-color-2: rgba(0, 0, 0, 0.3);
+  --shadow-color-header-1: rgba(0, 0, 0, 0.3);
+  --shadow-color-header-2: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply base variables to body */
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color-main);
+  color: var(--text-color-primary);
+  /* Add transition for smooth theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.link-tag {
+  text-decoration: none;
+  /* Ensure links are visible in dark mode */
+  color: var(
+    --text-color-bubble-name
+  ); /* Use name color or a dedicated link color */
+}
+body.dark-theme .link-tag {
+  color: var(--text-color-bubble-name); /* Ensure visibility */
+}
+
+.theme-toggle-container {
+  position: fixed; /* Position relative to the viewport */
+  top: 15px; /* Adjust distance from the top */
+  right: 15px; /* Adjust distance from the right */
+  z-index: 1050; /* High z-index to ensure it stays on top of other elements */
+}

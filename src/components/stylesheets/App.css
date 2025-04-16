@@ -1,0 +1,33 @@
+/* General body styling */
+body {
+  margin: 0; /* Removes default browser margin around the body */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  overflow: hidden; /* Prevents scrolling on the main body element */
+  font-size: 14px; /* Sets the base font size for the application */
+  font-family: "Open Sans", sans-serif; /* Sets the primary font, with sans-serif as a fallback */
+}
+
+/* Styling for link tags to remove default underline */
+.link-tag {
+  text-decoration: none; /* Removes the underline from elements with this class (likely used on React Router Links) */
+}
+
+/* Media queries section - Currently empty but indicates where responsive styles might go */
+/* media queries */
+
+/* Styling for the right sidebar container */
+.right-sidebar {
+  padding: 0; /* Removes any default padding */
+  background-color: #db188a3a; /* Sets a semi-transparent pinkish background color as a fallback or overlay */
+  background-image: url(../../images/background.jpg); /* Sets a background image for the right sidebar */
+  /* The background image path is relative to the location of this CSS file */
+}
+
+/* Styling for the left sidebar container */
+.left-sidebar {
+  background-color: rgb(
+    59,
+    204,
+    148
+  ); /* Sets a solid greenish background color */
+}

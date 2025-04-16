@@ -1,0 +1,222 @@
+/* Styles for the background when no conversation is selected */
+.no-chat-background {
+  background-color: #a04bb9; /* Sets a purple background color */
+}
+
+/* Styles for the main message box container */
+.message-box {
+  height: 95vh; /* Set height to 95% of the viewport height */
+  overflow: auto; /* Add a scrollbar if content overflows */
+}
+
+/* Styles for the header within the message box */
+.message-box-header {
+  background: rgb(37, 23, 53); /* Sets a dark purple background color */
+  position: fixed; /* Fix the header position at the top */
+  top: 0; /* Position it at the very top */
+  width: 100%; /* Make the header span the full width of its container (likely the right sidebar) */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  z-index: 3; /* Set the stack order to ensure it's above some other elements */
+  /* Apply a box shadow for depth */
+  box-shadow: 0 4px 8px 0 rgba(216, 213, 216, 0.2),
+    0 6px 20px 0 rgba(111, 196, 174, 0.336);
+}
+
+/* Styles for the section containing the chat messages */
+.messages-section {
+  margin-top: 60px; /* Add margin at the top to avoid overlapping with the fixed header */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange messages vertically */
+  justify-content: space-around; /* Distribute space around messages (might need adjustment, perhaps `flex-start` is better) */
+  padding: 30px 40px; /* Add padding around the messages area */
+}
+
+/* General styles for a message bubble container */
+.message-bubble {
+  display: flex; /* Use flexbox to arrange avatar and bubble content */
+  align-items: center; /* Vertically center items within the bubble container */
+}
+
+/* Modifier class for right-aligned message bubbles */
+.mbr {
+  /* Likely stands for 'message bubble right' */
+  flex-direction: row-reverse; /* Reverse the order of items (avatar appears on the right) */
+}
+
+/* Styles for the alert shown when there are no messages */
+.no-message-alert {
+  position: absolute; /* Position relative to the nearest positioned ancestor (likely .message-box) */
+  bottom: 50px; /* Position 50px from the bottom */
+  left: 60%; /* Position 60% from the left */
+  font-size: 18px; /* Set the font size */
+  color: #fff; /* Set text color to white */
+  background-color: rgb(93, 196, 173); /* Set a teal background color */
+  padding: 1.2rem; /* Add padding around the text */
+}
+
+/* Responsive adjustment for the no-message alert on smaller screens */
+@media screen and (max-width: 622px) {
+  .no-message-alert {
+    font-size: 14px; /* Reduce font size */
+  }
+}
+
+/* --- Chat Bubble Styles --- */
+
+/* Styles for the left (incoming) chat bubble */
+.left-bubble {
+  width: 220px; /* Set a fixed width */
+  height: auto; /* Height adjusts based on content */
+  display: block; /* Ensure it takes up its own block space */
+  background: #f0fe86; /* Set a light yellow background color */
+  border-radius: 4px; /* Apply rounded corners */
+  position: relative; /* Needed for positioning the arrow pseudo-element */
+  margin: 15px 0; /* Add vertical margin */
+  padding: 8px; /* Add padding inside the bubble */
+}
+
+/* Responsive adjustments for the left chat bubble on smaller screens */
+@media screen and (max-width: 792px) {
+  .left-bubble {
+    width: 200px; /* Reduce width */
+    padding: 6px; /* Reduce padding */
+    margin: 10px 0; /* Reduce margin */
+  }
+  /* Adjust font sizes within the bubble */
+  .name {
+    font-size: 12px;
+  }
+  .message {
+    font-size: 13px;
+  }
+}
+
+/* Further responsive adjustment for the message text on very small screens */
+@media screen and (max-width: 622px) {
+  .message {
+    font-size: 12px; /* Further reduce message font size */
+  }
+}
+
+/* Potentially unused class? Applies padding */
+.txt {
+  padding: 8px 55px 8px 14px;
+}
+
+/* Styles for the main message text within a bubble */
+.message {
+  /* Ensure long words wrap correctly */
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* Older compatibility */
+  hyphens: auto; /* Allow automatic hyphenation */
+}
+
+/* Styles for the sender's name within a bubble */
+.name {
+  font-weight: 600; /* Make the name bold */
+  font-size: 13px; /* Set font size */
+  margin: 0 0 4px; /* Remove top/left/right margin, add bottom margin */
+  color: #3498db; /* Set a blue color */
+}
+
+/* Styles for the timestamp within a bubble */
+.message-timestamp {
+  font-size: 11px; /* Set a small font size */
+  position: absolute; /* Position relative to the bubble container */
+  bottom: 8px; /* Position 8px from the bottom */
+  right: 10px; /* Position 10px from the right */
+  text-transform: uppercase; /* Display timestamp in uppercase */
+  color: black; /* Set text color to black */
+}
+
+/* Container for the bubble arrow (the tail) */
+.bubble-arrow {
+  position: absolute; /* Position relative to the bubble container */
+  width: 0; /* No width */
+  bottom: 42px; /* Vertical positioning */
+  left: -16px; /* Horizontal positioning (pushes it outside the left bubble) */
+  height: 0; /* No height */
+}
+
+/* Creates the actual arrow shape using a pseudo-element */
+.bubble-arrow:after {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position relative to the .bubble-arrow container */
+  border: 0 solid transparent; /* Base transparent border */
+  border-top: 9px solid #f5f5f5; /* Creates the triangle shape using top border color (should match bubble background) */
+  /* Note: The color #f5f5f5 doesn't match the .left-bubble background (#f0fe86). This might be a mistake. */
+  border-radius: 0 20px 0; /* Apply rounding to shape the arrow */
+  width: 15px; /* Set width of the arrow */
+  height: 30px; /* Set height of the arrow */
+  transform: rotate(145deg); /* Rotate the shape to point correctly */
+}
+
+/* Styles for the right (outgoing) chat bubble */
+.right-bubble {
+  width: 220px; /* Set width */
+  height: auto; /* Height based on content */
+  display: block; /* Block display */
+  background: #c93ba5e0; /* Set a semi-transparent pink/purple background */
+  border-radius: 4px; /* Rounded corners */
+  position: relative; /* For arrow positioning */
+  margin: 10px 0; /* Vertical margin */
+  align-self: flex-end; /* Align the bubble itself to the right within its flex container (.mbr) */
+  padding: 8px; /* Internal padding */
+}
+
+/* Responsive adjustments for the right chat bubble */
+@media screen and (max-width: 792px) {
+  .right-bubble {
+    width: 200px; /* Reduce width */
+    padding: 6px; /* Reduce padding */
+    margin: 10px 0; /* Keep margin */
+  }
+}
+
+/* Modifier class for the right bubble's arrow container */
+.bubble-arrow-alt {
+  right: -2px; /* Position from the right edge */
+  bottom: 40px; /* Vertical position */
+  left: auto; /* Reset left positioning */
+}
+
+/* Styles the right bubble's arrow shape using the pseudo-element */
+.bubble-arrow-alt:after {
+  /* Rotate and flip the arrow shape for the right side */
+  transform: rotate(45deg) scaleY(-1);
+  /* Note: The border-top color from .bubble-arrow:after will be inherited. It should ideally match the .right-bubble background (#c93ba5e0) */
+}
+
+/* Styles for the message input area container */
+.message-input {
+  background: rgb(45, 0, 128); /* Set a dark purple background */
+  position: fixed; /* Fix the position at the bottom */
+  bottom: 0; /* Stick to the bottom of the viewport */
+  width: 100%; /* Span the full width of its container */
+  padding: 12px; /* Add padding inside the container */
+  box-sizing: border-box; /* Include padding in the total width */
+}
+
+/* Styles for the text input field within the message input area */
+.message-input input {
+  outline: none; /* Remove the default focus outline */
+  padding: 6px; /* Add padding inside the input field */
+  width: 100%; /* Make the input take the full width of its column */
+}
+
+/* Styles for the send button */
+.send-button {
+  background-color: rgb(32, 218, 94); /* Set a green background color */
+  width: 30%; /* Set the button width relative to its container column */
+  color: white; /* Set text color to white */
+  padding: 6px; /* Add padding inside the button */
+  /* Note: Consider adding border: none; and cursor: pointer; */
+}
+
+/* Responsive adjustments for the send button */
+@media screen and (max-width: 792px) {
+  .send-button {
+    font-size: 12px; /* Reduce font size */
+    width: 40%; /* Increase relative width on smaller screens */
+  }
+}
